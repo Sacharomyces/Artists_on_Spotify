@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
+import { SpotifyService } from "app/spotify.service";
 
 @NgModule({
   declarations: [
@@ -14,7 +15,7 @@ import { AppComponent } from './app.component';
     HttpModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [SpotifyService],
   bootstrap: [AppComponent]
 })
 

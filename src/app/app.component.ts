@@ -4,6 +4,7 @@ import 'rxjs/add/operator/debounceTime';
 import 'rxjs/add/operator/distinctUntilChanged';
 import { Component } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { SpotifyService } from "app/spotify.service";
 
 @Component({
   selector: 'app-root',
@@ -16,7 +17,7 @@ export class AppComponent {
 
   searchControl = new FormControl();
 
-  constructor() {
+  constructor(private _spotifyService: SpotifyService) {
     this.searchControl.valueChanges
         .filter(text => text.length >= 3)
         .debounceTime(400)
