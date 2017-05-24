@@ -1,0 +1,48 @@
+<div class="container">
+    <h1>UserForm</h1>
+    <form (ngSubmit)="onSubmit()" #userForm="ngForm" >
+        <div class="form-group">
+            <label for="firstName">First Name</label>
+            <input type="text" 
+                class="form-control" 
+                id="firstName" required 
+                [(ngModel)]="model.firstName" 
+                name="firstName"
+                #firstName="ngModel"
+                />
+            <div class="alert alert-danger"
+                *ngIf="firstName.touched && !firstName.valid">
+                First name is required
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="text" 
+                class="form-control" 
+                id="email" required
+                [(ngModel)]="model.email" 
+                name="email"
+                #email="ngModel"
+                />
+            <div class="alert alert-danger"
+                *ngIf="email.touched && !email.valid">
+                Email required
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="country">Country</label>
+            <select class="form-control" id="country" [(ngModel)]="model.country" name="country">
+                <option *ngFor="let c of countries" [value]="c">{{c}}</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-default"
+            [disabled]="!userForm.form.valid">Submit</button> 
+        <div [hidden]="!submitted">
+            FirstName:{{model.firstName}}<br>
+            Email:{{model.email}}<br>
+            Country:{{model.country}}<br>
+            <button class="btn btn-default"
+                (click)="submitted=false">Remove</button>
+        </div>
+    </form>
+</div>

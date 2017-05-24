@@ -2,19 +2,19 @@
 import 'rxjs/add/operator/filter';
 import 'rxjs/add/operator/debounceTime';
 import 'rxjs/add/operator/distinctUntilChanged';
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { SpotifyService } from 'app/spotify.service';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: 'app.component.html',
-  styleUrls: ['app.component.css']
+
+  templateUrl: 'spotify.component.html',
+  styleUrls: ['spotify.component.css']
 
 
 })
 
-export class AppComponent {
+export class SpotifyComponent implements OnInit {
   artists = [];
   isLoading = false;
 
