@@ -1,4 +1,4 @@
-import { RouterModule,} from '@angular/router';
+import { RouterModule} from '@angular/router';
 import {HomeComponent} from './home.component';
 import {NotFoundComponent} from './notfound.component';
 import {SpotifyComponent} from './spotify.component';
